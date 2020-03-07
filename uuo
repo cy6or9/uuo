@@ -10,16 +10,20 @@ grey='\e[0;30m'
 red='\e[1;31m'
 green='\e[0;32m'
 blue='\e[1;34m'
-		echo -e $yellow $greyback"		BETA"
-	echo ""
-	echo -e $grey $greenback"     __     __   __     __      __     "
-	echo "     |  |   |  | |  |   |  |    /   \ "
-	echo "     |  |   |  | |  |   |  |   /  _  \ "
-	echo "     |  |   |  | |  |   |  |  |  / \  | "
-	echo "     |  |   |  | |  |   |  |  |  \_/  | "
-	echo "      \  \_/  /   \  \_/  /    \     / "
-	echo "       \_____/     \_____/      \___/ "
-	echo ""
+	  
+	  echo -e $yellow $greyback"              BETA"
+        echo "                                          "
+        echo -e $grey $greenback"                                               "
+        echo "      __     __   __     __      ___      "
+        echo "     |  |   |  | |  |   |  |    /   \     "
+        echo "     |  |   |  | |  |   |  |   /  _  \    "
+        echo "     |  |   |  | |  |   |  |  |  / \  |   "
+        echo "     |  |   |  | |  |   |  |  |  \_/  |   "
+        echo "      \  \_/  /   \  \_/  /    \     /    "
+        echo "       \_____/     \_____/      \___/     "
+        echo "                                          "
+
+
 
 while true
 do
