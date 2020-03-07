@@ -1,0 +1,119 @@
+#!/bin/bash
+#A script too stay anonymous
+
+blueback='\e[0;44m'
+greenback='\e[1;42m'
+greyback='\e[1;40m'
+lgreen='\e[1;32m'
+yellow='\e[1;33m'
+grey='\e[0;30m'
+red='\e[1;31m'
+green='\e[0;32m'
+blue='\e[1;34m'
+		echo -e $yellow $greyback"		BETA"
+	echo ""
+	echo -e $grey $greenback"     __     __   __     __      __     "
+	echo "     |  |   |  | |  |   |  |    /   \ "
+	echo "     |  |   |  | |  |   |  |   /  _  \ "
+	echo "     |  |   |  | |  |   |  |  |  / \  | "
+	echo "     |  |   |  | |  |   |  |  |  \_/  | "
+	echo "      \  \_/  /   \  \_/  /    \     / "
+	echo "       \_____/     \_____/      \___/ "
+	echo ""
+
+while true
+do
+
+	echo -e $grey $greenback"          Unidentified User OPTIONS"$lgreen $greyback
+ 
+	echo " 1. - My IP "
+	echo " 2. - RESET Mac "
+	echo " 3. - Change Mac "
+	echo " 4. - Nmap Port scan "
+	echo " 5. - Nmap Port, script, traceroute scan + OS & VERSION detect "
+	echo " 6. - Tor Browser "
+	echo " 7. - List onion sites "
+	echo " 8. - START Anonsurf "
+	echo " 9. - STOP Anonsurf " 
+	echo " 0. - ? "
+	echo "                   -CTRL + C to EXIT-"
+read uuo;
+
+	case $uuo in
+		1) echo -e $yellow $greyback"Your Public IP is..."
+			wget -qO- ipinfo.io/ip
+			;;
+		2) echo -n -e $yellow $greenback" Which Interface... Example(s) eth0, wlan0"; tput sgr0
+				read intrf1
+				sudo ifconfig $intrf1 down
+				sudo macchanger -p $intrf1
+				sleep 2
+				sudo ifconfig $intrf1 up
+				sleep 2
+				sudo service networking restart
+				echo -e $yellow"DONE..."
+				sleep 3
+				;;
+		3)echo -n -e $yellow $greenback" Which Interface... Example(s) eth0, wlan0"; tput sgr0
+			read intrf
+			sudo ifconfig $intrf down
+			sleep 1
+			sudo macchanger -a --bia $intrf
+			sudo ifconfig $intrf up
+			sudo service networking restart
+			sudo service network-manager restart
+			echo -e $yellow"DONE..." 
+			sleep 3 
+			;;
+		4) echo -n -e $yellow $greenback"Enter IP... "; tput sgr0
+			read target
+			echo -e $blue $greyback"SCANNING PORTS 1-65535"$yellow $greyback
+			sudo nmap -p1-65535 $target
+			;;
+		5) echo -n -e $yellow $greenback"Enter IP... "; tput sgr0
+			read target
+			echo -e $blue $greyback"SCANNING PORTS 1-65535 + OS, Version detection"$yellow $greyback
+			sudo nmap -p1-65535 -A $target
+			;;
+		6) torbrowser-launcher
+		;;
+		7) echo -e $yellow $greyback"	not Evil	- Search engine "
+			echo "			http://hss3uro2hsxfogfq.onion/ "
+			echo "	Torum		- Cyber Security Forum "
+			echo "			Torum6uvof666pzw.onion "
+			echo "	Dread		- Darknet Forum "
+			echo "			http://dreadditevelidot.onion/ "
+			echo "	Darknet Live	- Darknet news "
+			echo "			http://darknet7rl4epe24.onion/ "
+			echo "	Tor Wiki	- Shows more available onions sites "
+			echo "			http://torwikignoueupfm.onion/index.php?tit "
+			echo "	Facebook	- Facebook's onion domain "
+			echo "			https://www.facebookcorewwwi.onion/ "
+			echo "	ThePirateBay	- Deep web version of PitrateBay "
+			echo "			http://uj3wazyk5u4hnvtk.onion/ "
+			echo "	BrowsInfo	- Check your anonymity and browser traceability "
+			echo "			http://elfq2qefxx6dv3vy.onion/binfo_check_anonymity.ph "
+			echo "	ChatWithStrangers - Talk to random users anonymously. "
+			echo "			http://tetatl6umgbmtv27.onion/ "
+			echo "	Galaxy3		- Social networking for the Darknet "
+			echo "			http://galaxy3m2mn5iqtn.onion/ "
+			echo -e $red" 		IT'S BEST TO COPY/PASTE LINKS INTO TOR BROWSER "
+			echo " 			rather than clicking them "
+			;;
+		8) sudo anonsurf start
+			echo -e $yellow $greyback"Your Public IP is..."
+			wget -qO- ipinfo.io/ip
+			;;
+		9) sudo anonsurf stop
+			echo -e $yellow $greyback"Your Public IP is..."
+			wget -qO- ipinfo.io/ip
+			;;
+		*) echo -e $red"WTF!?!"
+		;;
+	esac
+
+
+
+done
+
+
