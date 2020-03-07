@@ -1,6 +1,7 @@
 # UUO
 # Unidentified User Options
- -Requirements:
+
+# Requirements:
  
  *macchanger
  
@@ -9,4 +10,11 @@
  *torbrowser-launcher
  
  *nmap
-#
+# Install & run
+cd into uuo directory...
+
+sudo chmod +x uuo
+
+then run it...
+
+./uuo
