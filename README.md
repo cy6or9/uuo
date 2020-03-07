@@ -1,8 +1,12 @@
 # UUO
 # Unidentified User Options
-# -Requirements:
-# *macchanger
-# *anonsurf
-# *torbrowser-launcher
-# *nmap
+ -Requirements:
+ 
+ *macchanger
+ 
+ *anonsurf
+ 
+ *torbrowser-launcher
+ 
+ *nmap
 #
