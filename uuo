@@ -54,7 +54,7 @@ read uuo;
 				sleep 2
 				sudo ifconfig $intrf1 up
 				sleep 2
-				sudo service networking restart
+				sudo service networking restart & sudo service network-manager restart
 				echo -e $yellow"DONE..."
 				sleep 3
 				;;
@@ -62,7 +62,7 @@ read uuo;
 			read intrf
 			sudo ifconfig $intrf down
 			sleep 1
-			sudo macchanger -a --bia $intrf
+			sudo macchanger -e $intrf
 			sudo ifconfig $intrf up
 			sudo service networking restart
 			sudo service network-manager restart
